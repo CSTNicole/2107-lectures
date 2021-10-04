@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { getData } from '../backend/database';
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { getFlamingos } from '../backend/database';
+import styles from '../styles/Home.module.css';
 
 import * as cheerio from 'cheerio';
 
@@ -18,7 +18,7 @@ export default function Home() {
 }
 
 export async function getServerSideProps() {
-    // const data = await getData();
+    const data = await getFlamingos();
 
     // console.log('the data is', data);
     const response = await fetch('https://bc-cb.rcmp-grc.gc.ca/ViewPage.action?siteNodeId=464&languageId=1&contentId=-1'); 
